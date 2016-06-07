@@ -1,0 +1,2 @@
+What happens when you initialize a repository? Why do you need to do it?
+It creates a .git directory, where data commit are storages and log, its necessary to user git commands on our project.
