@@ -4,4 +4,59 @@ It creates a .git directory, where data commit are storages and log, its necessa
 How is the staging area different from the working directory and the repository? What value do you think it offers?
 It's a middle area where files to be commited are added, it doesn'y affect the files in the actual directory.
 
+How can you use the staging area to make sure you have one commit per logical change?
+simple like using git diff to see files modified from las time, or checking with git status
 
+What are some situations when branches would be helpful in keeping your history organized? How would branches help?
+Its like make a copy of the project and for various porpuses you could add new features or try something whithout override the master branch
+
+How do the diagrams help you visualize the branch structure?
+It's like a timeline of the project and help me to figure out how is structure the project and where i am.
+
+What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
+Is a new master branch, it add commits from the new branch into the original branch, diagram is useful to see the changes and the state of the project or branches.
+
+What are the pros and cons of Git’s automatic merging vs. always doing merges manually?
+well it's better use merge by yourself, it helps you to review the code
+git init
+//creates a new repository in the actual directory
+
+git clone repositorydirectory
+//clone a git respository from the respositorydirectory given
+
+git status
+//show information about changes in the directory, staging area
+
+git diff
+//show files modified from actual directory
+
+git diff --staged
+//shows changes from a file in the stage area and the last commit on the repository
+
+git diff commmit1 commit2
+//show diff from both commits
+
+git log --graph --online branch_1  branch_2
+//shows commits history from both branch
+
+git branch -b branch_name
+//creates and switch to the new branch (-b is like checkout)
+
+git gc
+//runs the garbage collector, git do it automatically so use it when you need it
+
+git merge branch2
+//merge branch2 to actual branch, it's recommendable to checkout the master branch before do the merge, also you can run git merge branch1 branch2, where branch1 could be master and branch2 the new features
+//Windows users should set the global autocrlf attribute to true: git config --global core.autocrlf true. More information can be found here: https://help.github.com/articles/dealing-with-line-endings/#platform-all
+
+git merge --abort
+//restore your files to their state before you started the merge
+
+git reset --hard HEAD~1
+//delete las commit
+
+git reset --hard commitID
+//delete a specific commit
+
+git log -n 1
+//shows a number of logs, in this case only one
