@@ -60,3 +60,9 @@ git reset --hard commitID
 
 git log -n 1
 //shows a number of logs, in this case only one
+
+git remote origin URLtoGitRepository
+//Add a remote location for a git repository
+
+git push master origin
+//save the changes on our local repo to remote
